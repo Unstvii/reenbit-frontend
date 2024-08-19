@@ -72,9 +72,12 @@ function App() {
 
   const sendMessage = async (chatId, content) => {
     try {
-      const response = await axios.post(`${apiUrl}/${chatId}/messages`, {
-        content,
-      });
+      const response = await axios.post(
+        `${apiUrl}/api/chats/${chatId}/messages`,
+        {
+          content,
+        }
+      );
       setChats((prevChats) =>
         prevChats.map((chat) => (chat._id === chatId ? response.data : chat))
       );
