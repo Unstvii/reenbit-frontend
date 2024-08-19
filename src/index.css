@@ -51,7 +51,7 @@ body {
 
 .chat-window {
   width: 70%;
-  padding: 20px;
+  padding: 8vh 0vh 0vh 5vh;
 }
 
 .message {
@@ -131,6 +131,7 @@ input, button {
   border: none;
   border-radius: 5px;
   padding: 5px 8px 5px 8px;
+  cursor: pointer;
 }
 .edit-button{
   background-color: #6FC4E5;
@@ -145,6 +146,7 @@ input, button {
 .chat-window-form input{
   border-radius: 8px;
   border: 1px solid silver;
+  padding: 5px 0px 5px 8px;
   width: 90%;
 }
 .chat-window-form button{
@@ -152,4 +154,5 @@ input, button {
   color:#FFFFFF;
   border:none;
   border-radius: 5px;
+  width: 10%;
 }
