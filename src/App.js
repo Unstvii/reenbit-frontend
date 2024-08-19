@@ -11,6 +11,7 @@ function App() {
   const [chats, setChats] = useState([]);
   const [selectedChat, setSelectedChat] = useState(null);
   const [searchTerm, setSearchTerm] = useState("");
+  const apiUrl = "https://reenbit-backend.onrender.com";
 
   useEffect(() => {
     fetchChats();
@@ -18,7 +19,7 @@ function App() {
 
   const fetchChats = async () => {
     try {
-      const response = await axios.get("http://localhost:5000/api/chats");
+      const response = await axios.get(`${apiUrl}/api/chats`);
       setChats(response.data);
       if (response.data.length < 3) {
         for (let i = response.data.length; i < 3; i++) {
@@ -35,10 +36,7 @@ function App() {
 
   const createNewChat = async (chatData) => {
     try {
-      const response = await axios.post(
-        "http://localhost:5000/api/chats",
-        chatData
-      );
+      const response = await axios.post(`${apiUrl}/api/chats`, chatData);
       setChats((prevChats) => [...prevChats, response.data]);
       setSelectedChat(response.data);
     } catch (error) {
@@ -48,10 +46,7 @@ function App() {
 
   const updateChat = async (id, chatData) => {
     try {
-      const response = await axios.put(
-        `http://localhost:5000/api/chats/${id}`,
-        chatData
-      );
+      const response = await axios.put(`${apiUrl}/api/chats/${id}`, chatData);
       setChats((prevChats) =>
         prevChats.map((chat) => (chat._id === id ? response.data : chat))
       );
@@ -65,7 +60,7 @@ function App() {
 
   const deleteChat = async (id) => {
     try {
-      await axios.delete(`http://localhost:5000/api/chats/${id}`);
+      await axios.delete(`${apiUrl}/api/chats/${id}`);
       setChats((prevChats) => prevChats.filter((chat) => chat._id !== id));
       if (selectedChat && selectedChat._id === id) {
         setSelectedChat(null);
@@ -77,10 +72,9 @@ function App() {
 
   const sendMessage = async (chatId, content) => {
     try {
-      const response = await axios.post(
-        `http://localhost:5000/api/chats/${chatId}/messages`,
-        { content }
-      );
+      const response = await axios.post(`${apiUrl}/${chatId}/messages`, {
+        content,
+      });
       setChats((prevChats) =>
         prevChats.map((chat) => (chat._id === chatId ? response.data : chat))
       );
@@ -88,7 +82,7 @@ function App() {
 
       setTimeout(async () => {
         const updatedChatResponse = await axios.get(
-          `http://localhost:5000/api/chats/${chatId}`
+          `${apiUrl}/api/chats/${chatId}`
         );
         setChats((prevChats) =>
           prevChats.map((chat) =>
