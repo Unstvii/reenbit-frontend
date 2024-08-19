@@ -1,0 +1,90 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.App {
+  display: flex;
+  height: 100vh;
+}
+
+.chat-list {
+  width: 30%;
+  border-right: 1px solid #ccc;
+  padding: 20px;
+}
+
+.chat-window {
+  width: 70%;
+  padding: 20px;
+}
+
+.message {
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.message.user {
+  background-color: #e6f3ff;
+  text-align: right;
+}
+
+.message.bot {
+  background-color: #f0f0f0;
+}
+
+form {
+  margin-top: 20px;
+}
+
+input, button {
+  margin-right: 10px;
+  padding: 5px;
+}
+.chat-item {
+  border-bottom: 1px solid #eee;
+  padding: 10px 0;
+}
+
+.chat-item h3 {
+  margin: 0;
+}
+
+.chat-item p {
+  margin: 5px 0;
+  color: #666;
+}
+
+.chat-item small {
+  color: #999;
+}
+
+.message {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.message p {
+  margin: 0;
+}
+
+.message small {
+  font-size: 0.8em;
+  color: #999;
+  margin-left: 10px;
+}
+
+.message.user {
+  background-color: #e6f3ff;
+  text-align: right;
+}
+
+.message.bot {
+  background-color: #f0f0f0;
+}
