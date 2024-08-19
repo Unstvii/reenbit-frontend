@@ -109,14 +109,17 @@ function App() {
   return (
     <div className="App">
       <ToastContainer />
-      <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
-      <NewChatForm createNewChat={createNewChat} />
-      <ChatList
-        chats={filteredChats}
-        selectChat={setSelectedChat}
-        updateChat={updateChat}
-        deleteChat={deleteChat}
-      />
+      <div className="custom-wrapper">
+        <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
+        <NewChatForm createNewChat={createNewChat} />
+
+        <ChatList
+          chats={filteredChats}
+          selectChat={setSelectedChat}
+          updateChat={updateChat}
+          deleteChat={deleteChat}
+        />
+      </div>
       {selectedChat && (
         <ChatWindow chat={selectedChat} sendMessage={sendMessage} />
       )}

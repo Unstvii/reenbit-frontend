@@ -14,7 +14,7 @@ function NewChatForm({ createNewChat }) {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className="new-chat-form">
       <input
         type="text"
         value={firstName}

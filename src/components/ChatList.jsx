@@ -31,10 +31,16 @@ function ChatList({ chats, selectChat, updateChat, deleteChat }) {
                 });
               }
             }}
+            className="edit-button"
           >
             Edit
           </button>
-          <button onClick={() => deleteChat(chat._id)}>Delete</button>
+          <button
+            onClick={() => deleteChat(chat._id)}
+            className="delete-button"
+          >
+            Delete
+          </button>
         </div>
       ))}
     </div>

@@ -7,10 +7,38 @@ body {
 .App {
   display: flex;
   height: 100vh;
+  padding: 20px;
+}
+.search-bar{
+  height: 40px;
+  width: 100%;
+  border-radius: 8px;
+  border: 1px solid silver;
+  margin-top: 10px;
+  padding:0px 5px 0px 5px;
+}
+
+.new-chat-form{
+  display: flex;
+  flex-direction: row;
+}
+.new-chat-form input{
+  border-radius: 5px;
+  border:1px solid silver;
+}
+.new-chat-form button{
+  border: none;
+  border-radius: 5px;
+  color:#FFFFFF;
+  background-color: #6FC4E5;
+  cursor: pointer;
 }
 
 .chat-list {
-  width: 30%;
+  margin-top: 20px;
+  width: 100%;
+  height: auto;
+  min-height: 500px;
   border-right: 1px solid #ccc;
   padding: 20px;
 }
@@ -44,7 +72,7 @@ input, button {
   padding: 5px;
 }
 .chat-item {
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid silver;
   padding: 10px 0;
 }
 
@@ -87,4 +115,15 @@ input, button {
 
 .message.bot {
   background-color: #f0f0f0;
+}
+.chat-list button{
+  padding: 2px 5px 2px 5px;
+  color: #FFFFFF;
+
+}
+.edit-button{
+  background-color: #6FC4E5;
+}
+.delete-button{
+  background-color: #F70E0D;
 }
