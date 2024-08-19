@@ -17,30 +17,35 @@ function ChatList({ chats, selectChat, updateChat, deleteChat }) {
                 : ""}
             </small>
           </div>
-          <button
-            onClick={() => {
-              const newFirstName = prompt(
-                "Enter new first name:",
-                chat.firstName
-              );
-              const newLastName = prompt("Enter new last name:", chat.lastName);
-              if (newFirstName && newLastName) {
-                updateChat(chat._id, {
-                  firstName: newFirstName,
-                  lastName: newLastName,
-                });
-              }
-            }}
-            className="edit-button"
-          >
-            Edit
-          </button>
-          <button
-            onClick={() => deleteChat(chat._id)}
-            className="delete-button"
-          >
-            Delete
-          </button>
+          <div className="chat-item-container">
+            <button
+              onClick={() => {
+                const newFirstName = prompt(
+                  "Enter new first name:",
+                  chat.firstName
+                );
+                const newLastName = prompt(
+                  "Enter new last name:",
+                  chat.lastName
+                );
+                if (newFirstName && newLastName) {
+                  updateChat(chat._id, {
+                    firstName: newFirstName,
+                    lastName: newLastName,
+                  });
+                }
+              }}
+              className="edit-button"
+            >
+              Edit
+            </button>
+            <button
+              onClick={() => deleteChat(chat._id)}
+              className="delete-button"
+            >
+              Delete
+            </button>
+          </div>
         </div>
       ))}
     </div>

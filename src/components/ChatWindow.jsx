@@ -30,7 +30,7 @@ function ChatWindow({ chat, sendMessage }) {
           </div>
         ))}
       </div>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className="chat-window-form">
         <input
           type="text"
           value={message}

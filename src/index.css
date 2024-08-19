@@ -11,7 +11,7 @@ body {
 }
 .search-bar{
   height: 40px;
-  width: 100%;
+  width: 96.5%;
   border-radius: 8px;
   border: 1px solid silver;
   margin-top: 10px;
@@ -21,6 +21,8 @@ body {
 .new-chat-form{
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
+  width: 101%;
 }
 .new-chat-form input{
   border-radius: 5px;
@@ -34,13 +36,17 @@ body {
   cursor: pointer;
 }
 
+.chat-item-container{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
 .chat-list {
   margin-top: 20px;
   width: 100%;
   height: auto;
   min-height: 500px;
   border-right: 1px solid #ccc;
-  padding: 20px;
 }
 
 .chat-window {
@@ -74,6 +80,10 @@ input, button {
 .chat-item {
   border-bottom: 1px solid silver;
   padding: 10px 0;
+  max-width: 450px;
+  border-right: 1px solid silver;
+  padding-right: 15px;
+  padding-left: 5px;
 }
 
 .chat-item h3 {
@@ -117,13 +127,29 @@ input, button {
   background-color: #f0f0f0;
 }
 .chat-list button{
-  padding: 2px 5px 2px 5px;
   color: #FFFFFF;
-
+  border: none;
+  border-radius: 5px;
+  padding: 5px 8px 5px 8px;
 }
 .edit-button{
   background-color: #6FC4E5;
 }
 .delete-button{
   background-color: #F70E0D;
+}
+.chat-window-form{
+  display: flex;
+  flex-direction: row;
+}
+.chat-window-form input{
+  border-radius: 8px;
+  border: 1px solid silver;
+  width: 90%;
+}
+.chat-window-form button{
+  background-color: #6FC4E5;
+  color:#FFFFFF;
+  border:none;
+  border-radius: 5px;
 }
